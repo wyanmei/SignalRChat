@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "SignalR-聊天室";
+    Layout = "~/Views/Shared/_LayoutHiChat.cshtml";
+}
+@model SignalRChat.Models.UserViewModel
+
+<script type="text/javascript">
+    var current_uname = '@Model.Nick';
+    var current_pwd = '@Model.Password';
+    var current_userid = '@Model.UserId';
+</script>
+
+<div class="wall-bg">
+    <img src="~/Images/background.jpg" />
+</div>
+<div class="container js-body">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="js-userinfo clearfix">
+                <div class="js-user-img pull-left">
+                    <img src="~/Images/avatar.jpg" width="50" height="50" />
+                </div>
+                <div class="js-user-info pull-left">
+                    <div class="js-user-nickname">@Model.Nick</div>
+                    <div class="js-user-signature">无个性，不签名</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="js-main border-gray">
+                <div class="js-main-header text-white bg-black text-center">联系人</div>
+                <div class="js-main-body text-black bg-gray">
+                    <div class="js-main-body-group bg-white">
+                        <ul class="flex">
+                            <li class="js-li text-center" href="JavaScript:;" onclick="showHome();">大厅</li>
+                            <li class="text-gray js-li-seperator">|</li>
+                            <li class="js-li js-li-active text-center js-tab" href="#user">好友</li>
+                            <li class="text-gray js-li-seperator">|</li>
+                            <li class="js-li text-center js-tab" href="#group">群组</li>
+                        </ul>
+                    </div>
+                    <div class="js-ul-items bg-white js-tab-item" id="user">
+                        <div class="js-li-item" id="friends">
+                        </div>
+                        <div class="js-li-item"><span class="js-lt text-gray">&gt;</span>绿蚁新焙酒</div>
+                        <div class="js-li-item"><span class="js-lt text-gray">&gt;</span>红泥小火炉</div>
+                        <div class="js-li-item"><span class="js-lt text-gray">&gt;</span>晚来天欲雪</div>
+                        <div class="js-li-item"><span class="js-lt text-gray">&gt;</span>能饮一杯无</div>
+                    </div>
+                    <div class="js-tab-item bg-white" id="group">
+                        <div class="js-li-item" id="grouplist">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="js-main-footer bg-grey">
+                    <div class="js-btn-submit pull-left"><input type="button" name="btnshowGroupView" id="btnshowGroupView" value="创建群组" class="js-submit btn-primary" style="width:70px;" /></div>
+                </div>
+            </div>
+        </div>
+
+        <!------大厅窗口-------->
+        <div class="col-sm-9" id="js-chat-panel" style="display:block;">
+            <div class="js-chat text-white border-gray">
+                <div class="js-chat-header bg-grey text-center clearfix">
+                    <div class="js-txt-nickname pull-left">SignalR-聊天室-大厅</div>
+                </div>
+                <div class="js-chat-body bg-gray" id="js-panel-content" style="height:550px;width:847px;overflow:auto">
+                </div>
+                <div class="js-chat-footer clearfix bg-grey">
+                    <div class="js-text-msg pull-left" style="width:90%"><input type="text" name="msg" id="textMessage" placeholder="对大家说点啥" class="js-text" /></div>
+                    <div class="js-btn-submit pull-right"><input type="button" name="send" id="btnSend" value="发送" class="js-submit btn-primary" /></div>
+                </div>
+            </div>
+        </div>
+
+        <!------私聊好友窗口--------->
+        <div class="col-sm-9" id="js-chat-friends" style="display:none">
+            <div class="js-chat text-white border-gray">
+                <div class="js-chat-header bg-grey text-center clearfix">
+                    <div class="js-friend-title pull-left">SignalR-聊天室</div>
+                    <div class="js-div-close pull-right"><a href="javascript:;" class="text-white js-a-close" id="js-user-close">关闭</a></div>
+                    <input type="hidden" value="" name="hid_touserid" id="hid_touserid" />
+                </div>
+                <div class="js-chat-body bg-gray" id="js-friend-content" style="height:550px;width:847px;overflow:auto">
+
+
+                </div>
+                <div class="js-chat-footer clearfix bg-grey">
+                    <div class="js-text-msg pull-left" style="width:90%;"><input type="text" name="msg" id="txtfriendMsg" placeholder="对TA说点啥" class="js-text" /></div>
+                    <div class="js-btn-submit pull-right"><input type="button" name="btnFriendSend" id="btnFriendSend" value="发送" class="js-submit btn-primary" /></div>
+                </div>
+            </div>
+        </div>
+
+        <!------群组聊天窗口--------->
+        <div class="col-sm-9" id="js-chat-groups" style="display:none">
+            <div class="js-chat text-white border-gray">
+                <div class="js-chat-header bg-grey text-center clearfix">
+                    <div class="js-group-title pull-left">SignalR-聊天室</div>
+                    <div class="js-div-close pull-right"><a href="javascript:;" class="text-white js-a-close" id="js-group-close">退出</a></div>
+                    <input type="hidden" value="" name="hid_roomid" id="hid_roomid" />
+                </div>
+                <div class="js-chat-body bg-gray" id="js-group-content" style="height:550px;width:847px;overflow:auto">
+
+
+                </div>
+                <div class="js-chat-footer clearfix bg-grey">
+                    <div class="js-text-msg pull-left" style="width:90%;"><input type="text" name="msg" id="txtgroupMsg" placeholder="对大家说点啥" class="js-text" /></div>
+                    <div class="js-btn-submit pull-right"><input type="button" name="btnGroupdSend" id="btnGroupdSend" value="发送" class="js-submit btn-primary" /></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--创建群组模态框-->
+<div class="modal fade" id="groupModal" tabindex="-1" role="dialog" aria-labelledby="groupModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="exampleModalLabel">创建群组</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">群组名称:</label>
+                        <input type="text" class="form-control" placeholder="请输入群组名称" id="newroom-name">
+                        <label class="control-label" id="group_errmsg" style="color:red"></label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="creategroup()">创建</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script src=@Url.Content("~/Scripts/ChatHome.js") type="text/javascript"></script>
+}
+

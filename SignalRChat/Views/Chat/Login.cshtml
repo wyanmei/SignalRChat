@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "SignalR-聊天室";
+    Layout = "~/Views/Shared/_LayoutHiChat.cshtml";
+}
+<link href=@Url.Content("~/Content/Home.css") rel="stylesheet" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="js-home-main text-center">
+                <div class="js-home-title">SignalR-聊天室</div>
+                <div class="js-home-user">
+                    <p><label for="txtMail">昵称：<input type="text" name="email" id="txtNick" value="" /></label></p>
+                    <p><label for="txtNick">密码：<input type="password" name="nick" id="txtPwd" value="" /></label></p>
+                    <input  type="hidden" value="@ViewData["userid"]" name="userid" id="userid"/>
+                </div>
+                <div class="js-home-introduction text-center"><a href="javascript:;" id="btnLogin">立即体验</a></div>
+                <div class="js-home-subtitle">给你更清爽的全新体验</div>
+                <div class="js-home-copyright">Copyright© 2018 wym All Rights Reserved.</div>
+                <hr />
+                <p class="text-primary"><a href="#">SignalR-聊天室</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src=@Url.Content("~/Scripts/ChatLogin.js")></script>
+}

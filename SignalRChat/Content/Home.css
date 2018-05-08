@@ -1,0 +1,15 @@
+﻿/*主页*/
+.js-home-main {padding-top: 200px;text-align: center;font-family:'Comic Sans MS'}
+.js-home-title {font-size: 50px;}
+.js-home-subtitle{font-size:10px;padding-top:30px;color:#999;}
+.js-home-user{margin-top:30px;}
+.js-home-introduction{font-size:15px;padding-top:30px}
+.js-home-introduction a{display:block;width:100px;height:30px;margin:0 auto;padding:3px 10px;}
+.js-home-introduction a:link{text-decoration:none}
+.js-home-introduction a:visited{text-decoration:none}
+.js-home-introduction a:hover{text-decoration:none;background:#0094ff;border-radius:5px;color:#fff}
+.js-home-introduction a:active{text-decoration:none}
+.js-home-copyright{color:#333;padding-top:30px}
+/*body {
+background-image:url('/Images/background.jpg')
+}*/

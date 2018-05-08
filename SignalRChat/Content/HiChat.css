@@ -1,0 +1,74 @@
+﻿/*公用样式*/
+.body{font-family:微软雅黑}
+/*added by ZJ*/
+.flex{ display: flex;flex-direction: row;justify-content: space-around}
+
+/*字*/
+.text-white{color:#ffffff}/*字体白色*/
+.text-black{color:#000000}/*字体黑色色*/
+.text-gray{color:#bdbdbd}
+
+/*边框*/
+.border-black{border:solid 1px #525252}/*边框黑色*/
+.border-gray{border:1px solid #cccccc}/*边框灰色色*/
+.border-white{border:1px solid #ffffff}
+
+/*背景*/
+.bg-black{background-color:#3d3d3d;opacity: 1}/*北京黑色*/
+.bg-gray{background-color: #cccccc}
+.bg-grey{background-color: #4c4c4c}
+.bg-white{background-color: #ffffff}
+
+
+.wall-bg img{width:100%;height:100%;position:fixed;top:0;left:0;right:0;bottom:0;opacity:0.9;z-index:999}
+.js-body{position:relative;top:100px;z-index:1000}
+
+.js-userinfo{margin-bottom:20px}
+.js-user-img{line-height:50px;height:50px;width:50px;border:solid 1px #ffffff}
+.js-user-nickname{line-height:30px;height:30px;font-size:20px;text-shadow:#ffffff 2px 2px 2px}
+.js-user-signature {line-height: 20px;height:20px;text-shadow:#ffffff 2px 2px 2px}
+.js-user-info{padding-left:10px}
+/*main样式*/
+.js-main{ border-radius: 7px;}
+.js-main-header{font-size: 20px;height:40px;line-height: 40px;border-top-left-radius: 7px;border-top-right-radius:7px}
+.js-li-item{line-height: 40px;border-bottom: solid 1px #cccccc;padding: 0 0 0 12px;cursor:pointer}
+.js-main-body{max-height: 700px;min-height: 560px;}
+.js-main-body-group{ height:40px;line-height: 40px;cursor: pointer;}
+.js-lt{ padding-right: 8px;font-weight: bold;font-size: 20px;}
+.js-li-seperator{ font-size: 20px;font-weight: bold}
+.js-li{border-bottom: 2px solid #cccccc;width:47%}
+.js-li-active{border-bottom: solid 2px #0aa7fe;color: #0aa7fe;width:47%}
+.js-main-footer{height: 50px;line-height: 50px;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;}
+
+.js-li-img{ width: 20%;height: 40px;line-height: 40px;}
+.js-user{ height: 50px;line-height: 50px}
+.js-li-nickname{ width: 80%;height: 20px;line-height: 20px}
+.js-li-signature{ width: 80%;height: 20px;line-height: 20px;font-size: 10px;}
+
+/*chat 样式*/
+.js-chat{border-radius: 7px;opacity:0.9}
+.js-chat-header{font-size: 20px;height:40px;line-height: 40px;border-top-left-radius: 7px;border-top-right-radius:7px}
+.js-chat-body{max-height: 700px;min-height: 560px;}
+.js-txt-nickname{width:90%}
+
+.js-div-close{ width: 10%;}
+.js-a-close{ font-size: 15px;padding: 6px 10px;border: solid 1px #2c2727;border-radius: 5px;}
+.js-a-close:link{color: #ffffff;text-decoration: none}
+.js-a-close:visited{color: #ffffff;text-decoration: none}
+.js-a-close:hover{ color: #ffffff;text-decoration: none}
+.js-a-close:active{color: #ffffff;text-decoration: none}
+.js-chat-footer{ height: 50px;line-height: 50px;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;}
+
+.js-icon{width:10%;cursor:pointer}
+.js-text-msg{ width: 70%;height: 100%;}
+.js-text{ height: 30px;line-height: 30px;display: block;border: none;border: solid 1px #cccccc;width: 80%;border-radius: 5px;margin: 9px auto;outline: none}
+.js-btn-submit{ width: 10%;height:100%}
+.js-submit{ height: 40px;line-height: 40px;display: block;border: none;width: 90%;border-radius: 5px;margin: 4px auto;outline: none}
+
+.js-msg-info{margin: 10px 0;padding:15px 10px;border:solid 1px #cccccc;border-radius:5px;opacity:1;min-width:100px;max-width:300px;word-wrap:break-word}
+.js-msg-text{text-shadow:#ffffff 2px 2px 2px}
+.js-msg-text{margin:0 10px;}
+.js-msg-nick{font-size:18px}
+.js-time{height:40px;line-height:40px;}
+.js-time span{padding:5px 10px;background:#000000;opacity:0.6;border-radius:10px}
+
